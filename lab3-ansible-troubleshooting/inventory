@@ -5,7 +5,7 @@ veos-pod-10.localdomain ansible_ssh_host=172.16.15.223 ansible_ssh_user=admin an
 n9k-standalone-10.localdomain
 csr1000v-pod-10.localdomain
 veos-pod-10.localdomain
-[9k]
+[nxos]
 n9k-standalone-10.localdomain
 [csr]
 csr1000v-pod-10.localdomain
