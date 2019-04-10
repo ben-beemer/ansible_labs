@@ -1,0 +1,9 @@
+---
+- name: Setup Vlan
+  hosts: nxos
+  
+  tasks:
+    - name: Add Multiple Vlans
+      nxos_vlan:
+        aggregate: "{{ vlan_list }}"
+        state: present

@@ -1,0 +1,13 @@
+---
+- name: Setup Vlan
+  hosts: nxos
+  
+  tasks:
+    - name: Add Multiple Vlans
+      nxos_vlan:
+        vlan_id: "{{ item[0] }}"
+        name: "{{ item[1] }}"
+        state: present
+      loop:
+        - ['101', 'prod']
+        - ['102', 'dev']
