@@ -1,0 +1,6 @@
+Interfaces With Jumbo MTU:
+{% for interface in nxos_ifaces %}
+ {% if interface['mtu'] == 9216 %}
+   {{ interface['name'] }}
+ {% endif %}
+{% endfor %}

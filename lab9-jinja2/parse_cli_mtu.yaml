@@ -1,0 +1,15 @@
+- name: Parse CLI Example
+  hosts: nxos
+  tasks:
+    - name: get show interface
+      nxos_command:
+        commands:
+          - show interface
+      register: iface_output
+    - name: generate fact from interface output
+      set_fact:
+        nxos_ifaces: "{{ iface_output.stdout[0] |parse_cli('./parsers/nxos/show_interface_parser.yaml')}}"
+    - name: Write matching interfaces to file
+      template:
+       src: ./templates/interfaces.j2
+       dest: ./jumbo_mtus.txt

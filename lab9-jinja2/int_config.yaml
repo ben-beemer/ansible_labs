@@ -1,0 +1,7 @@
+- name: Jinja Interface Example
+  hosts: nxos
+  tasks:
+    - name: Write interface configuration to switch.
+      nxos_config:
+       src: ./templates/int_config.j2
+       save_when: changed
