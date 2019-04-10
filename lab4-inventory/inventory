@@ -4,7 +4,7 @@ localhost
 [eos]
 veos-pod-10.localdomain
 
-[routers]
+[router]
 csr1000v-pod-10.localdomain
 
 [nxos]
